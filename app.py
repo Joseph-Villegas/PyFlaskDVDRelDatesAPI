@@ -21,28 +21,28 @@ def home():
 @app.route('/last-week', methods=['GET'])
 def lastWeek():
     Bot = DVDBot()
-    week, dvds = Bot.getReleasesByWeek(0)
+    week, dvds = Bot.getReleasesByWeek(1)
     return jsonify({'weekOf': week, 'releases': dvds})
 
 
 @app.route('/this-week', methods=['GET'])
 def thisWeek():
     Bot = DVDBot()
-    week, dvds = Bot.getReleasesByWeek(1)
+    week, dvds = Bot.getReleasesByWeek(2)
     return jsonify({'weekOf': week, 'releases': dvds})
 
 
 @app.route('/next-week', methods=['GET'])
 def nextWeek():
     Bot = DVDBot()
-    week, dvds = Bot.getReleasesByWeek(2)
+    week, dvds = Bot.getReleasesByWeek(3)
     return jsonify({'weekOf': week, 'releases': dvds})
 
 
 @app.route('/in-two-weeks', methods=['GET'])
 def inTwoWeeks():
     Bot = DVDBot()
-    week, dvds = Bot.getReleasesByWeek(3)
+    week, dvds = Bot.getReleasesByWeek(0)
     return jsonify({'weekOf': week, 'releases': dvds})
 
 
