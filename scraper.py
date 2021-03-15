@@ -21,7 +21,7 @@ def scrape():
 			if 'src' in dvd.attrs and dvd.attrs['src'].endswith('jpg'):
 				title = dvd.attrs['title'].replace(' DVD Release Date', '')
 				poster = dvd.attrs['src']
-				movies.append({'title:': title, 'poster': poster})
+				movies.append({'title': title, 'poster': poster})
 
 		for movie, imdb_id in zip(movies, imdb_ids):
 			movie['imdb_id'] = imdb_id
